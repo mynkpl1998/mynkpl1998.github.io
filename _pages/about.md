@@ -16,9 +16,9 @@ I am a final year master student at the [Indraprastha Institute of Information T
 
 Recent News
 ======
-1. Got an internship offer from [Elucidata](https://elucidata.io/). Will spend two months (May-July 2019) as Software Engineering Intern at New Delhi, India.
+* Got an internship offer from [Elucidata](https://elucidata.io/). Will spend two months (May-July 2019) as Software Engineering Intern at New Delhi, India.
 
-1. Successfully completed my Bachelor's thesis titled "*A Reinforcement Learning Approach to Jointly Adapt Vehicular Communications and Planning for Optimized driving*" [[Slides]](https://docs.google.com/presentation/d/1IE7JBWysJrsmEhM11FQ0rIlCcIJzJh7t-z4YUDAcZNY/edit?usp=sharing) [[Video]](https://www.youtube.com/watch?v=la9ujSdYQSQ)
+* Successfully completed my Bachelor's thesis titled "*A Reinforcement Learning Approach to Jointly Adapt Vehicular Communications and Planning for Optimized driving*" [[Slides]](https://docs.google.com/presentation/d/1IE7JBWysJrsmEhM11FQ0rIlCcIJzJh7t-z4YUDAcZNY/edit?usp=sharing) [[Video]](https://www.youtube.com/watch?v=la9ujSdYQSQ)
 
-2. Got an internship offer from [Philips](https://www.philips.co.in/content/corporate/en_IN/about-philips/philips-innovation-center.html/). Will spend two months (May-July 2018) as Machine learning Intern at Philips Innovation Campus, Bengaluru, India.
+* Got an internship offer from [Philips](https://www.philips.co.in/content/corporate/en_IN/about-philips/philips-innovation-center.html/). Will spend two months (May-July 2018) as Machine learning Intern at Philips Innovation Campus, Bengaluru, India.
 
