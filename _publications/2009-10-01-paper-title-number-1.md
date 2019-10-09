@@ -1,7 +1,7 @@
 ---
-title: "Paper Title Number 1"
-collection: publications
-permalink: /publication/2009-10-01-paper-title-number-1
+title: "A Reinforcement Learning Approach to Jointly Adapt Vehicular Communications and Planning for Optimized Driving"
+collection: Conference Papers
+permalink: /conf-papers/A-Reinforcement-Learning-Approach-to-Jointly-Adapt-Vehicular-Communications and-Planning-for-Optimized-Driving
 excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
 date: 2009-10-01
 venue: 'Journal 1'
