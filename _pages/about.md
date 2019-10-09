@@ -11,7 +11,7 @@ redirect_from:
 About Me
 ========
 
-I am a final year master student at the [Indraprastha Institute of Information Technology](https://www.iiitd.ac.in/) (IIIT-Delhi), India. My research interest spans Reinforcement learning, Machine learning and Autonomous driving. I received my Bachelor's degree in 2019 from IIIT-Delhi, where I was advised by [Prof. Sanjit K. Kaul](https://sites.google.com/view/sanjitkkaul/) and [Prof. Saket Anand](https://www.iiitd.edu.in/~anands/).
+I am a final year master student at the [Indraprastha Institute of Information Technology](https://www.iiitd.ac.in/) (IIIT-Delhi), India. My research interest spans Reinforcement learning, Machine learning, Autonomous driving and Heterogeneous computing. I received my Bachelor's degree in 2019 from IIIT-Delhi, where I was advised by [Prof. Sanjit K. Kaul](https://sites.google.com/view/sanjitkkaul/) and [Prof. Saket Anand](https://www.iiitd.edu.in/~anands/).
 
 
 Recent News
