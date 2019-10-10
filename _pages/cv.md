@@ -7,10 +7,8 @@ redirect_from:
   - /resume
 ---
 
-Last Udapted on - October 2019
+Last Udapted on - 10th October 2019
 
-<object data="https://www.dropbox.com/s/u4jep8ghn4udslz/Mayank_Kumar_Pal_Oct_2019.pdf?dl=1" type="application/pdf" width="700px" height="700px">
-    <embed src="https://www.dropbox.com/s/u4jep8ghn4udslz/Mayank_Kumar_Pal_Oct_2019.pdf?dl=1">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://www.dropbox.com/s/u4jep8ghn4udslz/Mayank_Kumar_Pal_Oct_2019.pdf?dl=1">Download PDF</a>.</p>
-    </embed>
-</object>
+[[Direct Link]](https://drive.google.com/file/d/1ieUDZLAf2dSRf_8B-GwonpYLKjzNfH8G/preview)
+
+<iframe src="https://drive.google.com/file/d/1ieUDZLAf2dSRf_8B-GwonpYLKjzNfH8G/preview" width="800" height="700"></iframe>
