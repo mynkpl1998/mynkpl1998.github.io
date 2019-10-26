@@ -8,9 +8,9 @@ date: 2019-08-01
 location: "New Delhi, India"
 ---
 
-Course Link : [https://www.usebackpack.com/iiitd/m2019/ece5xx](https://www.usebackpack.com/iiitd/m2019/ece5xx)
-
-Course Instructor : Prof. [Sumit Mediratta](https://in.linkedin.com/in/sumit-mediratta-7b522639)
+**Course Link** : [https://www.usebackpack.com/iiitd/m2019/ece5xx](https://www.usebackpack.com/iiitd/m2019/ece5xx)
+<br>
+**Course Instructor** : Prof. [Sumit Mediratta](https://in.linkedin.com/in/sumit-mediratta-7b522639)
 
 ### Overview
 
@@ -32,3 +32,8 @@ Heterogeneous computing platforms consist of different kind of processing elemen
 
 * Software programming using Python and C/C++
 * Digital logic design (ECE-111)
+
+### Textbooks
+* “Heterogeneous Computing with OpenCL 2.0”, David R. Kaeli, Perhaad Mistry, Dana Schaa, Dong Ping Zhang
+* "Deep Learning", Ian Goodfellow, Yoshua Bengio, Aaron Courville
+* “Computer Vision: Models, Learning, and Inference”, Dr Simon J. D. Prince

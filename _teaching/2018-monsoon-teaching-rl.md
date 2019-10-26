@@ -8,9 +8,9 @@ date: 2018-08-01
 location: "New Delhi, India"
 ---
 
-Course Link : [https://www.usebackpack.com/iiitd/m2018/ececserl](https://www.usebackpack.com/iiitd/m2018/ececserl)
-
-Course Instructor : Prof. [Sanjit K. Kaul](https://sites.google.com/view/sanjitkkaul/)
+**Course Link** : [https://www.usebackpack.com/iiitd/m2018/ececserl](https://www.usebackpack.com/iiitd/m2018/ececserl)
+<br>
+**Course Instructor** : Prof. [Sanjit K. Kaul](https://sites.google.com/view/sanjitkkaul/)
 
 ### Overview
 
@@ -31,4 +31,3 @@ The course will introduce reinforcement learning as an approximate dynamic progr
 
 * Reinforcement Learning: An introduction by Sutton and Barto
 * Dynamic Programming and Optimal Control, Vol 2 on Approximate Dynamic Programming by Dimitri P. Bertsekas
-
