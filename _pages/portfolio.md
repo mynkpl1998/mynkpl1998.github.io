@@ -22,7 +22,7 @@ author_profile: true
 
 | Asynchronous Actor-Critic (A3C) - Policy Gradients Methods |
 | :---- |
-| **Description** : High quality implementation of A3C algorithm with Generalized Advantage Estimation. Supports different neural network based policies out of the box. Performance of the algorithm scales linearly with the number of cores. <br> **Source Code** : [https://github.com/mynkpl1998/Recurrent-Deep-Q-Learning](https://github.com/mynkpl1998/Recurrent-Deep-Q-Learning) <br> **Trained Policies** : <br> <br> ![alt-text-5](https://raw.githubusercontent.com/mynkpl1998/A3C/dev/images/cartpole.gif "Cartpole - keep the pole in vertical position" ) ![alt-text-6](https://raw.githubusercontent.com/mynkpl1998/A3C/dev/images/lunarLandar.gif "Lunar Lander - land between flags")|
+| **Description** : High quality implementation of A3C algorithm with Generalized Advantage Estimation. Supports different neural network based policies out of the box. Performance of the algorithm scales linearly with the number of cores. <br> **Source Code** : [https://github.com/mynkpl1998/Recurrent-Deep-Q-Learning](https://github.com/mynkpl1998/Recurrent-Deep-Q-Learning) <br> **Trained Policies** : <br> <br> ![alt-text-5](https://raw.githubusercontent.com/mynkpl1998/mynkpl1998.github.io/master/images/cartpole.gif "Cartpole - keep the pole in vertical position" ) ![alt-text-6](https://raw.githubusercontent.com/mynkpl1998/mynkpl1998.github.io/master/images/lander.gif "Lunar Lander - land between flags")|
 
 | Deep learning for Physical layer |
 | :---- |
