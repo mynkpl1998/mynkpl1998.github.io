@@ -7,7 +7,7 @@ redirect_from:
   - /resume
 ---
 
-Last Udapted on - 10th October 2019
+Last Updated on - 10th October 2019
 
 [[Direct Link]](https://drive.google.com/file/d/1ieUDZLAf2dSRf_8B-GwonpYLKjzNfH8G/preview)
 
