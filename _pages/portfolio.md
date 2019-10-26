@@ -5,9 +5,9 @@ permalink: /projects/
 author_profile: true
 ---
 
-*Note : Please follow the provided links of the project for more details.*
+*Note : Please follow the provided link(s) in each project for full details. Also, some of the projects title has hyperlink which navigates directly to the project page.*
 
-| Visualizing Deep Learning  Optimization Algorithms|
+| [Visualizing Deep Learning  Optimization Algorithms](https://github.com/mynkpl1998/Deep-Learning-Optimization-Algorithms) |
 | :---- |
 | **Description** : Gradient based algorithms is the key to optimize the deep neural networks. Apart from the vanilla gradient descent algorithm, there exists many variant of gradient based algorithms which can  improve the speed of convergence and can avoid local minima too. In this project, various Deep learning optimization algorithmswere studied and their speed of convergence were visualized using PyTorch. Visualization of various deep learning optimization algorithms implemented using PyTorch’s automatic differentiation tool and optimizers. It demonstrates how the iterative methods approaches to the minimum in the case of convex, non-convex surfaces and surfaces with saddle point. <br> **Source Code** : [https://github.com/mynkpl1998/Deep-Learning-Optimization-Algorithms](https://github.com/mynkpl1998/Deep-Learning-Optimization-Algorithms) <br> **Some visualizations** :  <br> ![alt-text-1](https://github.com/mynkpl1998/Deep-Learning-Optimization-Algorithms/raw/master/Images/convex_sgd.gif "SGD on convex-surface") ![alt-text-2](https://github.com/mynkpl1998/Deep-Learning-Optimization-Algorithms/raw/master/Images/non_convex_sgd.gif "SGD on non-convex surface")|
 
@@ -20,7 +20,7 @@ author_profile: true
 | :---- |
 | **Description** : This framework implements the various state of the art Value based Deep Reinforcement Learning algorithms, supports OpenAI gym environments out of the box. Implementation include Deep-Q learning, Deep-Q learning with target freezing, Prioritized experience replay, Double Q-learning. <br> **Source Code** : [https://github.com/mynkpl1998/Deep-RL-Framework](https://github.com/mynkpl1998/Deep-RL-Framework)|
 
-| Asynchronous Actor-Critic (A3C) - Policy Gradients Methods |
+| [Asynchronous Actor-Critic (A3C) - Policy Gradients Methods](https://github.com/mynkpl1998/A3C/tree/dev) |
 | :---- |
 | **Description** : High quality implementation of A3C algorithm with Generalized Advantage Estimation. Supports different neural network based policies out of the box. Performance of the algorithm scales linearly with the number of cores. <br> **Source Code** : [https://github.com/mynkpl1998/A3C/tree/dev](https://github.com/mynkpl1998/A3C/tree/dev) <br> **Trained Policies** : <br> <br> ![alt-text-5](https://raw.githubusercontent.com/mynkpl1998/mynkpl1998.github.io/master/images/cartpole.gif "Cartpole - keep the pole in vertical position" ) ![alt-text-6](https://raw.githubusercontent.com/mynkpl1998/mynkpl1998.github.io/master/images/lander.gif "Lunar Lander - land between flags")|
 
@@ -34,7 +34,7 @@ author_profile: true
 | **Description** : Many devices today have more than one processor other than CPUs to accelerate certain workloads. For example, an integrated graphics or DSPs in an embedded system. This creates an interesting opportunity for deep learning community to take advantage of it and use it to accelerate the inference/training process for edge devices. We attempted to implement the inference of some of the known architecture like Recurrent and Convolutional neural networks for FPGA and GPU in Open Compute Language trained on standard datasets. <br> **CNN Source Code** : [https://bitbucket.org/mynkpl1998/vgg_opencl/src/master/](https://bitbucket.org/mynkpl1998/vgg_opencl/src/master/) <br> **RNN Source Code** : [https://bitbucket.org/mynkpl1998/rnn_opencl/src/master/](https://bitbucket.org/mynkpl1998/rnn_opencl/src/master/) <br> **CNN Report** : [https://drive.google.com/file/d/1yDCyucwo6I5Z2bOd-tKOkEWo-ByrFHdc/view](https://drive.google.com/file/d/1yDCyucwo6I5Z2bOd-tKOkEWo-ByrFHdc/view) <br> **RNN Report** : [https://drive.google.com/file/d/1GzoLjMLM-rKMvbgFPtIJ7b3X_wivbxfw/view](https://drive.google.com/file/d/1GzoLjMLM-rKMvbgFPtIJ7b3X_wivbxfw/view)|
 
 
-| ][ATP-Predict](https://github.com/mynkpl1998/atppredict) |
+| [ATP-Predict](https://github.com/mynkpl1998/atppredict) |
 | :---- |
 | **Description** : We carried out a brief implementation of the paper Identification of ATP binding residues of aprotein from its primary sequence and attempted to improve on the existing methods by using different machinelearning techniques using an extended dataset and optimized parameters on the models.  We obtained maximumcross-validation accuracy of around 0.64 on a balanced data-set, with window size 17. <br> **Project Web Page** : [https://mynkpl1998.github.io/atppredict/](https://mynkpl1998.github.io/atppredict/)|
 
