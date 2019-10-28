@@ -26,7 +26,7 @@ author_profile: true
 
 | Deep learning for Physical layer |
 | :---- |
-| **Description** : We present and discuss the application of Deep Learning (DL) for the physical layer.  By interpreting acommunication system as an AutoEncoder, we develop a fundamental new way to think about communications system design as end-to-end reconstruction task that seeks to jointly optimize transmitter and receivercomponents in a single process.  Simulations were done to illustrate the learning of the deep networks. Further, the results were compared with traditional methods. <br> **Report** : [https://drive.google.com/file/d/1q3Ba741gZxWAgv4t7ERwb5H93iajp2J-/view](https://drive.google.com/file/d/1q3Ba741gZxWAgv4t7ERwb5H93iajp2J-/view) <br> **Triand Policies** <br> <br> |
+| **Description** : We present and discuss the application of Deep Learning (DL) for the physical layer.  By interpreting a communication system as an AutoEncoder, we develop a fundamental new way to think about communications system design as end-to-end reconstruction task that seeks to jointly optimize transmitter and receiver components in a single process.  Simulations were done to illustrate the learning of the deep networks. Further, the results were compared with traditional methods. <br> **Report** : [https://drive.google.com/file/d/1q3Ba741gZxWAgv4t7ERwb5H93iajp2J-/view](https://drive.google.com/file/d/1q3Ba741gZxWAgv4t7ERwb5H93iajp2J-/view) <br> **Triand Policies** <br> <br> |
 
 
 | Implemention of Convolutional and Recurrent neural networks inference for Heterogeneous Devices (GPU and FPGA) using OpenCL |
@@ -36,7 +36,7 @@ author_profile: true
 
 | [ATP-Predict](https://github.com/mynkpl1998/atppredict) |
 | :---- |
-| **Description** : We carried out a brief implementation of the paper Identification of ATP binding residues of aprotein from its primary sequence and attempted to improve on the existing methods by using different machinelearning techniques using an extended dataset and optimized parameters on the models.  We obtained maximumcross-validation accuracy of around 0.64 on a balanced data-set, with window size 17. <br> **Project Web Page** : [https://mynkpl1998.github.io/atppredict/](https://mynkpl1998.github.io/atppredict/)|
+| **Description** : We carried out a brief implementation of the paper Identification of ATP binding residues of a protein from its primary sequence and attempted to improve on the existing methods by using different machine learning techniques using an extended dataset and optimized parameters on the models.  We obtained maximum cross-validation accuracy of around 0.64 on a balanced data-set, with window size 17. <br> **Project Web Page** : [https://mynkpl1998.github.io/atppredict/](https://mynkpl1998.github.io/atppredict/)|
 
 | Cancer Prediction using Deep Neural Networks |
 | :---- |
