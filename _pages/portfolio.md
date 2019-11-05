@@ -5,7 +5,7 @@ permalink: /projects/
 author_profile: true
 ---
 
-*Note : Please follow the provided link(s) in each project for full details. Also, some of the projects title has hyperlink which navigates directly to the project page.*
+*Note : Please follow the provided link(s) in each project for full details. Also, some of the project title have hyperlink which navigates directly to the project page.*
 
 | [Visualizing Deep Learning  Optimization Algorithms](https://github.com/mynkpl1998/Deep-Learning-Optimization-Algorithms) |
 | :---- |
@@ -26,7 +26,7 @@ author_profile: true
 
 | Deep learning for Physical layer |
 | :---- |
-| **Description** : We present and discuss the application of Deep Learning (DL) for the physical layer.  By interpreting a communication system as an AutoEncoder, we develop a fundamental new way to think about communications system design as end-to-end reconstruction task that seeks to jointly optimize transmitter and receiver components in a single process.  Simulations were done to illustrate the learning of the deep networks. Further, the results were compared with traditional methods. <br> **Report** : [https://drive.google.com/file/d/1q3Ba741gZxWAgv4t7ERwb5H93iajp2J-/view](https://drive.google.com/file/d/1q3Ba741gZxWAgv4t7ERwb5H93iajp2J-/view) <br> **Triand Policies** <br> <br> |
+| **Description** : We present and discuss the application of Deep Learning (DL) for the physical layer.  By interpreting a communication system as an AutoEncoder, we develop a fundamental new way to think about communications system design as end-to-end reconstruction task that seeks to jointly optimize transmitter and receiver components in a single process.  Simulations were done to illustrate the learning of the deep networks. Further, the results were compared with traditional methods. <br> **Report** : [https://drive.google.com/file/d/1q3Ba741gZxWAgv4t7ERwb5H93iajp2J-/view](https://drive.google.com/file/d/1q3Ba741gZxWAgv4t7ERwb5H93iajp2J-/view) <br> **Modeling communication system as end-to-end learning system**: <br> <br> ![alt-text9]()|
 
 
 | Implemention of Convolutional and Recurrent neural networks inference for Heterogeneous Devices (GPU and FPGA) using OpenCL |
