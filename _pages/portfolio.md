@@ -45,4 +45,3 @@ author_profile: true
 | [Visualizing VGG16 feature maps in Keras](https://github.com/mynkpl1998/visualize-vgg16) |
 | :---- |
 | **Description**: This project impelements the code for visualizing the feature maps of VGG16 Convoutional Neural Network using Keras. Particular layer of the network can be visualized by defining it as an output layer. For brevity please check some examples given below. <br> **Source Code**: [https://github.com/mynkpl1998/visualize-vgg16](https://github.com/mynkpl1998/visualize-vgg16) <br> **Feature maps**: <br> ![alt-text-12](https://raw.githubusercontent.com/mynkpl1998/mynkpl1998.github.io/master/images/glass_maps.png "Beer glass") ![alt-text-11](https://raw.githubusercontent.com/mynkpl1998/mynkpl1998.github.io/master/images/bear_maps.png "Bear")|
-
