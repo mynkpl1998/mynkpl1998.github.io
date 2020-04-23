@@ -16,6 +16,8 @@ I am a final year master student at the [Indraprastha Institute of Information T
 
 Recent News
 ======
+* Got an internship offer from [TCS Research, Robotics](https://www.tcs.com/tcs-research). Will be working on developing an Open CL based framework to deploy neural network on FPGAs and GPUs for low-power devices.
+
 * Got an internship offer from [Elucidata](https://elucidata.io/). Will spend two months (May-July 2019) as Software Engineering Intern at New Delhi, India.
 
 * Successfully completed my Bachelor's thesis titled "**A Reinforcement Learning Approach to Jointly Adapt Vehicular Communications and Planning for Optimized driving**" [[Slides]](https://docs.google.com/presentation/d/1IE7JBWysJrsmEhM11FQ0rIlCcIJzJh7t-z4YUDAcZNY/edit?usp=sharing) [[Video]](https://www.youtube.com/watch?v=la9ujSdYQSQ)
