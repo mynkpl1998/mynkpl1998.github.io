@@ -19,7 +19,9 @@ The main idea of writing this blog post is to summarize and extend the understan
 1. $$ k $$ - Policy parameters update step.
 2. $$ t $$ - Episode/Agent's interaction time step.
 3. $$ S $$ - Set of state space.
-4. $$ A $$ - Set of action space. 
+4. $$ A $$ - Set of action space.
+5. $$ \mu(s) : S \rightarrow [0, 1] $$ - Initial state distribution.
+6. $$ P(s_{t+1} \vert s_{t}, a_{t}): S \times A(s) \times S \rightarrow [0, 1] $$ - Environment dynamics. 
 
 # Introduction
 
@@ -27,9 +29,9 @@ Policy-based optimization methods work by directly approximating the policy (whi
 
 For these methods, the policy $$ \pi $$, is a function that maps the state $$ s $$, to an action $$ a $$, $$ \pi = f : S \rightarrow A(s) $$. The policy can be represented using a linear or non-linear family of functions (such as deep neural networks) parameterized by weights $$ \theta $$, $$ a = \pi_{\theta}(s) $$. 
 
-In practice, the actions seen by the agent during learning are highly influenced by the initialization of the parameters of the policy. To encourage exploration, a stochastic mapping or a distribution over actions is preferred instead of a deteministic mapping. Sampling actions from this distibution allows for some randomness and thus helps the agent to explore during learning without going off-policy. Therefore, it is common to learn a parameterized distribution (pdf/pmf) over actions, conditioned on the state for such methods, $$ \pi_{\theta}(a \vert s) $$. 
+In practice, the actions seen by the agent during learning are highly influenced by the initialization of the parameters of the policy. To encourage exploration, a stochastic mapping or a distribution over actions is preferred instead of a deterministic mapping. Sampling actions from this distibution allows for some randomness and thus helps the agent to explore during learning without going off-policy. Therefore, it is common to learn a parameterized distribution (pdf/pmf) over actions, conditioned on the state for such methods, $$ \pi_{\theta}(a \vert s) $$. 
 
-> NOTE: The policy mapping could be any function as long as it is differentiable w.r.t to parameters $$ \theta $$ and $$ \nabla_{\theta} \pi_{\theta}(a \vert s) $$ always exists and is finite $$ \forall s \in S, a \in A(s) $$.
+> NOTE: The policy mapping could be any function as long as it is differentiable w.r.t to parameters $$ \theta $$ and $$ \nabla_{\theta} \pi_{\theta}(a \vert s) $$ always exists and is finite, $$ \forall s \in S, a \in A(s) $$.
 
 
 The goal of these methods is to learn the parameters for the policy that maximizes the expected return of the trajectories, $$ J(\pi_{\theta}) = \mathbb{E}[ R(\tau) ] $$, where $$ R(\tau) $$ corresponds to the *undiscounted sum of rewards* of the trajectory $$ \tau $$. The trajectory $$ \tau $$, corresponds to the sequence of states and actions $$ (s_{0}, a_{0}, s_{1}, a_{1}, ..., a_{T-1}, s_{T}), $$ which agent experiences. The expectation is over the initial state-distribution, $$ s_{0} \sim \mu(s) $$, environment dynamics, $$ \bar{s} \sim P(s_{t+1} \vert s_{t}, a_{t}) $$ and actions sampled using policy, $$ a \sim \pi_{\theta}(a_{t} \vert s_{t}) $$.
@@ -58,7 +60,7 @@ Let's derive some useful results which will be used in policy gradient derivatio
 
 * Probability of a trajectory $$ \tau $$, $$ P(\tau \vert \theta_{k}) $$.
 
-The trajectory $$ \tau = (s_{0}, a_{0}, s_{1}, ... a_{T-1}, s_{T})$$, is a sequence of the state and action pair which agent experiences, given that actions are sampled from $$ \pi_{\theta_{k}} $$. 
+The trajectory $$ \tau = (s_{0}, a_{0}, s_{1}, ... a_{T-1}, s_{T})$$, is a sequence of the state and action pair which agent experiences, given that actions are sampled from $$ \pi_{\theta_{k}} $$. The probability of trajectory $$ \tau $$, gives the likelihood of seeing the trajectory $$ \tau $$ out of all the possible set of trajectories.
 
 $$
 \begin{equation}
@@ -117,3 +119,5 @@ $$
 \label{policy_gradient_eqn}
 \nabla_{\theta_{k}} J(\pi_{\theta_{k}}) =  \mathbb{E}_{\tau \sim P(\tau \vert \theta_{k})} \left [ \sum_{t=0}^{T} \nabla_{\theta_{k}} \log \pi_{\theta_{k}}(a_{t} \vert s_{t}) R(\tau) \right]
 $$
+
+Equation ($$ \ref{policy_gradient_eqn} $$), is the expression for the policy gradient. The expression is an expectation over the set of all possible trajectories. To calculate this expectation exactly, we need to know the set of all possible trajectories and their probablities which can be calculated using equation ($$ \ref{prob_of_a_trajectory} $$). However, the probability of a trajectory depends upon $$ \mu(s) $$ and $$ P(s_{t+1} \vert s_{t}, a_{t}) $$, which are typically unknown or difficult to obtain (like for complex environments). In practice, all we need is an good estimate of this gradient and 
