@@ -17,7 +17,7 @@ I am a final year master student at the [Indraprastha Institute of Information T
 Recent News
 ======
 
-* Joined [Qualcomm](https://www.qualcomm.com/), Hyderabad, India as the full time Engineer. Will be working in RF modems team for desgining system for 2G/3G/4G/5G technologies. 
+* Joined [Qualcomm](https://www.qualcomm.com/), Hyderabad, India as the full time Engineer. Will be working in RF team for desgining system for 2G/3G/4G/5G technologies. 
 
 * Got an internship offer from [TCS Research, Robotics](https://www.tcs.com/tcs-research). Will be working on developing an Open CL based framework to deploy neural network on FPGAs and GPUs for low-power devices.
 
