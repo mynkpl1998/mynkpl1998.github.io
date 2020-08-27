@@ -17,13 +17,13 @@ I am a final year master student at the [Indraprastha Institute of Information T
 Recent News
 ======
 
-* Joined [Qualcomm](https://www.qualcomm.com/), Hyderabad, India as the full time Engineer. Will be working in RF team for desgining system for 2G/3G/4G/5G technologies. 
+* [Aug 2020 - Present] Joined [Qualcomm](https://www.qualcomm.com/), Hyderabad, India as the full time Engineer. Will be working in RF team for desgining system for 2G/3G/4G/5G technologies. 
 
-* Got an internship offer from [TCS Research, Robotics](https://www.tcs.com/tcs-research). Will be working on developing an Open CL based framework to deploy neural network on FPGAs and GPUs for low-power devices.
+* [Dec 2019 - May 2020] Got an internship offer from [TCS Research, Robotics](https://www.tcs.com/tcs-research). Will be working on developing an Open CL based framework to deploy neural network on FPGAs and GPUs for low-power devices.
 
-* Got an internship offer from [Elucidata](https://elucidata.io/). Will spend two months (May-July 2019) as Software Engineering Intern at New Delhi, India.
+* [May 2020 - Jul 202] Got an internship offer from [Elucidata](https://elucidata.io/). Will spend two months as Software Engineering Intern at New Delhi, India.
 
 * Successfully completed my Bachelor's thesis titled "**A Reinforcement Learning Approach to Jointly Adapt Vehicular Communications and Planning for Optimized driving**" [[Slides]](https://docs.google.com/presentation/d/1IE7JBWysJrsmEhM11FQ0rIlCcIJzJh7t-z4YUDAcZNY/edit?usp=sharing) [[Video]](https://www.youtube.com/watch?v=la9ujSdYQSQ)
 
-* Got an internship offer from [Philips](https://www.philips.co.in/content/corporate/en_IN/about-philips/philips-innovation-center.html/). Will spend two months (May-July 2018) as Machine learning Intern at Philips Innovation Campus, Bengaluru, India.
+* [May 2018 - Jul 2018] Got an internship offer from [Philips](https://www.philips.co.in/content/corporate/en_IN/about-philips/philips-innovation-center.html/). Will spend two months as Machine learning Intern at Philips Innovation Campus, Bengaluru, India.
 
