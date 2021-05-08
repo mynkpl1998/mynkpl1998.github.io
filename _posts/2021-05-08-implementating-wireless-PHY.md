@@ -24,26 +24,28 @@ There are various ways to communicate information from one place to another. But
 2. RX - Receiver
 3. SDR - Software Defined Radio
 
-# Introduction
+# :wave: Introduction
 
 In this blog, we will consider an information source which has digital information (sequence of zeros/ones) which it needs to communicate to other device which is at some distance from it. To transmit this information, at sending end we will need a transmitter (TX) which will encode this digital information over radio waves. The radio waves are then transmitted via antenna and is propogated through the air which reaches the receiver (RX). The job of receiver is then to decoded the information from these wireless signals. The figure shows the flow of information between the two devices.
 
-<center><img src="images/blog_posts_media/implement_wiphy/wireles_comm.png"></center>
+<center><img src="https://raw.githubusercontent.com/mynkpl1998/mynkpl1998.github.io/master/images/blog_posts_media/implement_wiphy/wireles_comm.png"></center>
 <center>This is an image</center>
 
-> NOTE: In this post, the focus is to design a half-duplex wireless link. This implies, the TX and RX is fixed. Only one can transmit and other can receive. Not the other way around. We are particularly interested in building a device which can send unaddressed, unreliale(without ACK) short messages between the TX and RX. 
+> NOTE: In this post, the focus is to design a half-duplex wireless link. This implies, the TX and RX is fixed. Only one can transmit and other can receive. Not the other way around. We are particularly interested in building a device which can send unaddressed, unrelibale(without ACK) short messages between the TX and RX. 
 
-# Hardware Required
+# :gear: Hardware Required
 
 As discussed in the previous section, we will need a TX and RX to build such a  wireless link. 
 
 ### TX
   
-  For TX, we will make use 315/433 MHZ ASK RF modules. These modules are very simple to use and very cheap as well. The module can be connected to Arduino and can be programmed from the same to modulate the baseband signal on to the 433/315MHz sine wave of carrier which is then transmiited through the on-board antenna.
+  For TX, we will make use 315/433 MHz ASK RF modules (See figure x). These modules are very simple to use and are very cheap as well. The module can be connected to micro-controllers such as Arduino and can be programmed from the same to modulate the digital signal on to the carrier wave which a sine wave of 315 or 433 Mhz frequency. This carrier is then is then transmiited through the on-board antenna.
 
-  > NOTE: You can always attach a peace of short wire to the antenna port of the module to improve the signal reception and communication range. 
+  > NOTE: There are two varaints of ASK modules, one which make use 315 MHz frequency and the other which uses 433 MHz. Anyone should be fine. I am using 315 MHZ one. If you are using 433 MHZ, then you need to change radio settings in configuration file. More deatils will be followed in the later sections. Further, you can always attach a peace of short wire to the antenna port of the module to improve the signal reception and communication range. 
 
 ### RX
+
+  At RX, we will make use Realtek Software Defined Radio (RTL-SDR). This SDR is capable of receveing signals from 
 
 $$
 \begin{equation}
