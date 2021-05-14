@@ -23,6 +23,8 @@ There are various ways to communicate information from one place to another. But
 1. TX - Transmmitter
 2. RX - Receiver
 3. SDR - Software Defined Radio
+4. MS/s - Mega samples per second
+5. ADC - Analog to Digital converter
 
 # :wave: Introduction
 
@@ -35,7 +37,7 @@ In this blog, we will consider an information source which has digital informati
 
 # :gear: Hardware Required
 
-As discussed in the previous section, we will need a TX and RX to build such a  wireless link. 
+As discussed in the previous section, we will need a TX and RX to build such a  wireless link. Apart from that, an Ardunio is also required to hook up the TX module.
 
 ### TX
   
@@ -45,83 +47,23 @@ As discussed in the previous section, we will need a TX and RX to build such a  
 
 ### RX
 
-  At RX, we will make use Realtek Software Defined Radio (RTL-SDR). This SDR is capable of receveing signals from 
+  At RX, we will make use Realtek Software Defined Radio (RTL-SDR). This SDR is capable of receveing signals which lies within 24 - 1766 MHz frquency range with sample rate of upto 2 MS/s. The ADC of the SDR has the resolution of 8-bit. We will use the SDR to capture the signals transmitted at 315 MHz and anlalyze those captures to look for the transmitted data.Put a picture
 
-$$
-\begin{equation}
-\label{policy_update_rule}
+  > NOTE: The SDR connects to the laptop/PC and the samples captured by the SDR can be streamed to the device over USB.
 
-\theta_{k+1} = \theta_{k} + \alpha \nabla_{\theta} J(\pi_{\theta_{k}})
- 
-\end{equation}
-$$
+# :electric_plug: Getting the hardware up and running
 
-<br>
+### Wiring the TX
 
-# Deriving policy gradient, $$ \nabla_{\theta_{k}} J(\pi_{\theta_{k}}) $$
+The TX connects to a micro-controller such as Arduino using three wires. The connections are pretty straight and are summarized in the Fig 3. 
 
-Let's derive some useful results which will be used in policy gradient derivation.
+<center><img src="https://lastminuteengineers.com/wp-content/uploads/arduino/433MHz-RF-Wireless-Transmitter-Pinout.png" height="300" width="300"></center>
+<center>Fig 3. 433/315 MHz ASK connections pinout. <br>Source: <a href="https://lastminuteengineers.com/433mhz-rf-wireless-arduino-tutorial/">lastminuteengineers.com</a> </center>
 
-* Probability of a trajectory $$ \tau $$, $$ P(\tau \vert \theta_{k}) $$.
+Once the connection is made, the Arduino needs to be connected to PC via USB to upload the firmware and send messages via the connected RF module.
 
-The trajectory $$ \tau = (s_{0}, a_{0}, s_{1}, ... a_{T-1}, s_{T})$$, is a sequence of the state and action pair which agent experiences, given that actions are sampled from $$ \pi_{\theta_{k}} $$. The probability of trajectory $$ \tau $$, gives the likelihood of seeing the trajectory $$ \tau $$ out of all the possible set of trajectories.
+## Sanity checks running system performance once the connection is done.
 
-$$
-\begin{equation}
-\label{prob_of_a_trajectory}
-P(\tau \vert \theta_{k}) = \mu(s_{0}) \pi_{\theta_{k}} (a_{0} \vert s_{0}) P(s_{1} \vert s_{0}, a_{0}), ... ,\pi_{\theta_{k}}({a_{T-1} \vert s_{T-1}}) P(s_{T} \vert s_{T-1}, a_{T-1}) 
+# References
 
-\\
-
-= \mu(s_{0}) \prod_{t=0}^{T} \pi_{\theta_{k}}(a_{t} \vert s_{t}) P(s_{t+1} \vert s_{t}, a_{t})
-\end{equation}
-$$
-
-* Log gradient trick
-
-
-$$
-\begin{equation}
-\label{log_grad_trick}
-\frac{\nabla_{\theta_{k}} P(\tau \vert \theta_{k})}{P(\tau \vert \theta_{k})} = \nabla_{\theta_{k}} \log P(\tau \vert \theta_{k})
-\end{equation}
-$$
-
-Equation ($$ \ref{policy_update_rule} $$), summarizes the update rule to update the parameters of the policy. In equation, all we need to do is to plug-in the policy gradient. Therefore, Let's derive it.
-
-$$
-
-\nabla_{\theta_{k}} J(\pi_{\theta_{k}}) = \nabla_{\theta_{k}} \mathbb{E} [R(\tau)]
-\\
-= \nabla_{\theta_{k}} \int_{\tau} P(\tau \vert \theta_{k}) R(\tau) d\tau
-$$
-
-Now, let's take the gradient inside the intergal. Since, $$ R(\tau) $$ is not a function of $$ \theta_{k} $$, it acts as a constant.
-
-$$
-\nabla_{\theta_{k}} J(\pi_{\theta_{k}}) =  \int_{\tau} \nabla_{\theta_{k}} P(\tau \vert \theta_{k}) R(\tau) d\tau
-$$
-
-$$
-=  \int_{\tau} P(\tau \vert \theta_{k}) \nabla_{\theta_{k}} \log P(\tau \vert \theta_{k}) R(\tau) d\tau \;\;\;\; \text{From, (} \ref{log_grad_trick} \text{)}
-
-\\
-$$
-
-$$
-=  \int_{\tau} P(\tau \vert \theta_{k}) \nabla_{\theta_{k}}\left[ \log \mu(s_{0}) + \sum_{t=0}^{T} \log \pi_{\theta_{k}}(a_{t} \vert s_{t}) + \log P(s_{t+1} \vert s_{t}, a_{t})\right] R(\tau) d\tau \;\;\;\; \text{From, (} \ref{prob_of_a_trajectory} \text{)}
-
-$$
-
-Again, $$  \log \mu(s_{0}) $$ and $$ \log P(s_{t+1} \vert s_{t}, a_{t}) $$ are not the functions of $$ \theta_{k} $$. Therefore, $$ \nabla_{\theta_{k}} \log \mu(s_{0}) = 0 $$ and $$ \nabla_{\theta_{k}} \log P(s_{t+1} \vert s_{t}, a_{t}) = 0 $$.
-
-$$
-=  \int_{\tau} P(\tau \vert \theta_{k}) \sum_{t=0}^{T} \nabla_{\theta_{k}} \log \pi_{\theta_{k}}(a_{t} \vert s_{t}) R(\tau) d\tau
-$$
-
-$$
-\label{policy_gradient_eqn}
-\nabla_{\theta_{k}} J(\pi_{\theta_{k}}) =  \mathbb{E}_{\tau \sim P(\tau \vert \theta_{k})} \left [ \sum_{t=0}^{T} \nabla_{\theta_{k}} \log \pi_{\theta_{k}}(a_{t} \vert s_{t}) R(\tau) \right]
-$$
-
-Equation ($$ \ref{policy_gradient_eqn} $$), is the expression for the policy gradient. The expression is an expectation over the set of all possible trajectories. To calculate this expectation exactly, we need to know the set of all possible trajectories and their probablities which can be calculated using equation ($$ \ref{prob_of_a_trajectory} $$). However, the probability of a trajectory depends upon $$ \mu(s) $$ and $$ P(s_{t+1} \vert s_{t}, a_{t}) $$, which are typically unknown or difficult to obtain (like for complex environments). In practice, all we need is an good estimate of this gradient and 
+1. <a href="https://lastminuteengineers.com/433mhz-rf-wireless-arduino-tutorial/">https://lastminuteengineers.com/433mhz-rf-wireless-arduino-tutorial/</a>
