@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./hugo-blog
+        working-directory: hugo-blog
     env:
       HUGO_VERSION: 0.124.1
     steps:
