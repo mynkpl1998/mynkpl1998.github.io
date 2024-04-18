@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Dissecting Policy Optimization | Mayank Kumar Pal</title>
 <meta name="keywords" content="RL, Actor-Critic">
 <meta name="description" content="I assume the reader is familiar with the basics of Reinforcement learning and has a basic understanding of statistics and a bit of calculus. One should be comfortable with manipulating value functions, policy, and bellman equations.
 The main idea of writing this blog post is to summarize and extend the understanding of reinforcement learning methods that directly optimizes policy. More or less, this blog post is a summary for me to revisit the concepts and various tricks that are helpful while dealing with Policy-based optimization.">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/blog/disecting_policy_gradients/">
+<link rel="canonical" href="https://mynkpl1998.github.io/blog/disecting_policy_gradients/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.879895b4d5fd89ce0beb4dc2d2820888f6abc1370be8438465503ddda25669ae.css" integrity="sha256-h5iVtNX9ic4L603C0oIIiParwTcL6EOEZVA93aJWaa4=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<link rel="icon" href="https://mynkpl1998.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://mynkpl1998.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://mynkpl1998.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://mynkpl1998.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://mynkpl1998.github.io/safari-pinned-tab.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/blog/disecting_policy_gradients/">
+<link rel="alternate" hreflang="en" href="https://mynkpl1998.github.io/blog/disecting_policy_gradients/">
 <noscript>
     <style>
         #theme-toggle,
@@ -31,7 +31,69 @@ The main idea of writing this blog post is to summarize and extend the understan
         }
 
     </style>
-</noscript>
+</noscript><meta property="og:title" content="Dissecting Policy Optimization" />
+<meta property="og:description" content="I assume the reader is familiar with the basics of Reinforcement learning and has a basic understanding of statistics and a bit of calculus. One should be comfortable with manipulating value functions, policy, and bellman equations.
+The main idea of writing this blog post is to summarize and extend the understanding of reinforcement learning methods that directly optimizes policy. More or less, this blog post is a summary for me to revisit the concepts and various tricks that are helpful while dealing with Policy-based optimization." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mynkpl1998.github.io/blog/disecting_policy_gradients/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2020-06-27T01:47:28-07:00" />
+<meta property="article:modified_time" content="2020-06-27T01:47:28-07:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Dissecting Policy Optimization"/>
+<meta name="twitter:description" content="I assume the reader is familiar with the basics of Reinforcement learning and has a basic understanding of statistics and a bit of calculus. One should be comfortable with manipulating value functions, policy, and bellman equations.
+The main idea of writing this blog post is to summarize and extend the understanding of reinforcement learning methods that directly optimizes policy. More or less, this blog post is a summary for me to revisit the concepts and various tricks that are helpful while dealing with Policy-based optimization."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "",
+      "item": "https://mynkpl1998.github.io/blog/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Dissecting Policy Optimization",
+      "item": "https://mynkpl1998.github.io/blog/disecting_policy_gradients/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Dissecting Policy Optimization",
+  "name": "Dissecting Policy Optimization",
+  "description": "I assume the reader is familiar with the basics of Reinforcement learning and has a basic understanding of statistics and a bit of calculus. One should be comfortable with manipulating value functions, policy, and bellman equations.\nThe main idea of writing this blog post is to summarize and extend the understanding of reinforcement learning methods that directly optimizes policy. More or less, this blog post is a summary for me to revisit the concepts and various tricks that are helpful while dealing with Policy-based optimization.",
+  "keywords": [
+    "RL", "Actor-Critic"
+  ],
+  "articleBody": " I assume the reader is familiar with the basics of Reinforcement learning and has a basic understanding of statistics and a bit of calculus. One should be comfortable with manipulating value functions, policy, and bellman equations.\nThe main idea of writing this blog post is to summarize and extend the understanding of reinforcement learning methods that directly optimizes policy. More or less, this blog post is a summary for me to revisit the concepts and various tricks that are helpful while dealing with Policy-based optimization.\nNotation Used $ k $ - Policy parameters update step. $ t $ - Episode/Agent’s interaction time step. $ S $ - Set of state space. $ A $ - Set of action space. $ \\mu(s) : S \\rightarrow [0, 1] $ - Initial state distribution. $ P(s_{t+1} \\vert s_{t}, a_{t}): S \\times A(s) \\times S \\rightarrow [0, 1] $ - Environment dynamics. Introduction Policy-based optimization methods work by directly approximating the policy (which we care for) and therefore eliminates the need for a value-function during action selection. Unlike, the value-based methods like Q-learning and SARSA, where the action selection requires access to Q-values.\nFor these methods, the policy $ \\pi $, is a function that maps the state $ s $, to an action $ a $, $ \\pi = f : S \\rightarrow A(s) $. The policy can be represented using a linear or non-linear family of functions (such as deep neural networks) parameterized by weights $ \\theta $, $ a = \\pi_{\\theta}(s) $.\nIn practice, the actions seen by the agent during learning are highly influenced by the initialization of the parameters of the policy. To encourage exploration, a stochastic mapping or a distribution over actions is preferred instead of a deterministic mapping. Sampling actions from this distibution allows for some randomness and thus helps the agent to explore during learning without going off-policy. Therefore, it is common to learn a parameterized distribution (pdf/pmf) over actions, conditioned on the state for such methods, $ \\pi_{\\theta}(a \\vert s) $.\nNote: The policy mapping could be any function as long as it is differentiable w.r.t to parameters $ \\theta $ and $ \\nabla_{\\theta} \\pi_{\\theta}(a \\vert s) $ always exists and is finite, $ \\forall s \\in S, a \\in A(s) $.\nThe goal of these methods is to learn the parameters for the policy that maximizes the expected return of the trajectories, $ J(\\pi_{\\theta}) = \\mathbb{E}[ R(\\tau) ] $, where $ R(\\tau) $ corresponds to the undiscounted sum of rewards of the trajectory $ \\tau $. The trajectory $ \\tau $, corresponds to the sequence of states and actions $ (s_{0}, a_{0}, s_{1}, a_{1}, …, a_{T-1}, s_{T}), $ which agent experiences. The expectation is over the initial state-distribution, $ s_{0} \\sim \\mu(s) $, environment dynamics, $ \\bar{s} \\sim P(s_{t+1} \\vert s_{t}, a_{t}) $ and actions sampled using policy, $ a \\sim \\pi_{\\theta}(a_{t} \\vert s_{t}) $.\nNote : We assume, no discounting ($ \\gamma $ = 1) and finite horizon (episodic) task. The same is true for $ \\gamma \\neq 1 $ but may not apply to non-episodic tasks. For infinite horizon (non-episodic) tasks, performance is defined in terms of the average rate of reward per time step. For more details, please have a look at Introduction to Reinforcement Learning, Sutton \u0026 Barto, Second Edition, Draft 2017, Chapter-13.6\nNote: From now on, we will use $ k $ to denote the policy parameters update step and $ t $ to denote the episode time step.\nThe parameters of the policy are updated by running the gradient ascent on $ J(\\pi_{\\theta_{k}} ) $. The parameter update rule is given by equation $ (\\ref{policy_update_rule}) $, where $ \\alpha $ is the learning rate. It is possible to use $ \\alpha_{k} $ instead of fixed learning rate. Most of the state-of-the-art optimizers like Adam, RMSProp, etc., uses an adaptive learning rate to scale the learning rate based upon the statistics of the past gradients.\n$ \\begin{equation} \\label{policy_update_rule}\n\\theta_{k+1} = \\theta_{k} + \\alpha \\nabla_{\\theta} J(\\pi_{\\theta_{k}})\n\\end{equation} $\nDeriving policy gradient, $ \\nabla_{\\theta_{k}} J(\\pi_{\\theta_{k}}) $ Let’s derive some useful results which will be used in policy gradient derivation.\nProbability of a trajectory $ \\tau $, $ P(\\tau \\vert \\theta_{k}) $. The trajectory $ \\tau = (s_{0}, a_{0}, s_{1}, … a_{T-1}, s_{T})$, is a sequence of the state and action pair which agent experiences, given that actions are sampled from $ \\pi_{\\theta_{k}} $. The probability of trajectory $ \\tau $, gives the likelihood of seeing the trajectory $ \\tau $ out of all the possible set of trajectories.\n$ \\begin{equation} \\label{prob_of_a_trajectory} P(\\tau \\vert \\theta_{k}) = \\mu(s_{0}) \\pi_{\\theta_{k}} (a_{0} \\vert s_{0}) P(s_{1} \\vert s_{0}, a_{0}), … ,\\pi_{\\theta_{k}}({a_{T-1} \\vert s_{T-1}}) P(s_{T} \\vert s_{T-1}, a_{T-1})\n\\\n= \\mu(s_{0}) \\prod_{t=0}^{T} \\pi_{\\theta_{k}}(a_{t} \\vert s_{t}) P(s_{t+1} \\vert s_{t}, a_{t}) \\end{equation} $\nLog gradient trick $ \\begin{equation} \\label{log_grad_trick} \\frac{\\nabla_{\\theta_{k}} P(\\tau \\vert \\theta_{k})}{P(\\tau \\vert \\theta_{k})} = \\nabla_{\\theta_{k}} \\log P(\\tau \\vert \\theta_{k}) \\end{equation} $\nEquation ($ \\ref{policy_update_rule} $), summarizes the update rule to update the parameters of the policy. In equation, all we need to do is to plug-in the policy gradient. Therefore, Let’s derive it.\n$\n\\nabla_{\\theta_{k}} J(\\pi_{\\theta_{k}}) = \\nabla_{\\theta_{k}} \\mathbb{E} [R(\\tau)] \\ = \\nabla_{\\theta_{k}} \\int_{\\tau} P(\\tau \\vert \\theta_{k}) R(\\tau) d\\tau $\nNow, let’s take the gradient inside the intergal. Since, $ R(\\tau) $ is not a function of $ \\theta_{k} $, it acts as a constant.\n$ \\nabla_{\\theta_{k}} J(\\pi_{\\theta_{k}}) = \\int_{\\tau} \\nabla_{\\theta_{k}} P(\\tau \\vert \\theta_{k}) R(\\tau) d\\tau $\n$ = \\int_{\\tau} P(\\tau \\vert \\theta_{k}) \\nabla_{\\theta_{k}} \\log P(\\tau \\vert \\theta_{k}) R(\\tau) d\\tau ;;;; \\text{From, (} \\ref{log_grad_trick} \\text{)}\n\\ $\n$ = \\int_{\\tau} P(\\tau \\vert \\theta_{k}) \\nabla_{\\theta_{k}}\\left[ \\log \\mu(s_{0}) + \\sum_{t=0}^{T} \\log \\pi_{\\theta_{k}}(a_{t} \\vert s_{t}) + \\log P(s_{t+1} \\vert s_{t}, a_{t})\\right] R(\\tau) d\\tau ;;;; \\text{From, (} \\ref{prob_of_a_trajectory} \\text{)}\n$\nAgain, $ \\log \\mu(s_{0}) $ and $ \\log P(s_{t+1} \\vert s_{t}, a_{t}) $ are not the functions of $ \\theta_{k} $. Therefore, $ \\nabla_{\\theta_{k}} \\log \\mu(s_{0}) = 0 $ and $ \\nabla_{\\theta_{k}} \\log P(s_{t+1} \\vert s_{t}, a_{t}) = 0 $.\n$ = \\int_{\\tau} P(\\tau \\vert \\theta_{k}) \\sum_{t=0}^{T} \\nabla_{\\theta_{k}} \\log \\pi_{\\theta_{k}}(a_{t} \\vert s_{t}) R(\\tau) d\\tau $\n$ \\label{policy_gradient_eqn} \\nabla_{\\theta_{k}} J(\\pi_{\\theta_{k}}) = \\mathbb{E}{\\tau \\sim P(\\tau \\vert \\theta{k})} \\left [ \\sum_{t=0}^{T} \\nabla_{\\theta_{k}} \\log \\pi_{\\theta_{k}}(a_{t} \\vert s_{t}) R(\\tau) \\right] $\nEquation ($ \\ref{policy_gradient_eqn} $), is the expression for the policy gradient. The expression is an expectation over the set of all possible trajectories. To calculate this expectation exactly, we need to know the set of all possible trajectories and their probablities which can be calculated using equation ($ \\ref{prob_of_a_trajectory} $). However, the probability of a trajectory depends upon $ \\mu(s) $ and $ P(s_{t+1} \\vert s_{t}, a_{t}) $, which are typically unknown or difficult to obtain (like for complex environments). In practice, all we need is an good estimate of this gradient and\n",
+  "wordCount" : "1118",
+  "inLanguage": "en",
+  "datePublished": "2020-06-27T01:47:28-07:00",
+  "dateModified": "2020-06-27T01:47:28-07:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mynkpl1998.github.io/blog/disecting_policy_gradients/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Mayank Kumar Pal",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mynkpl1998.github.io/favicon.ico"
+    }
+  }
+}
+</script>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
@@ -56,35 +118,35 @@ The main idea of writing this blog post is to summarize and extend the understan
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="Mayank Kumar Pal (Alt + H)">
-                <img src="http://localhost:1313/command.svg" alt="" aria-label="logo"
+            <a href="https://mynkpl1998.github.io/" accesskey="h" title="Mayank Kumar Pal (Alt + H)">
+                <img src="https://mynkpl1998.github.io/command.svg" alt="" aria-label="logo"
                     height="25">Mayank Kumar Pal</a>
             <div class="logo-switches">
             </div>
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/about/" title="About">
+                <a href="https://mynkpl1998.github.io/about/" title="About">
                     <span>About</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/blog/" title="Blog">
+                <a href="https://mynkpl1998.github.io/blog/" title="Blog">
                     <span>Blog</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/publications/" title="Publications">
+                <a href="https://mynkpl1998.github.io/publications/" title="Publications">
                     <span>Publications</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/tags/" title="Tags">
+                <a href="https://mynkpl1998.github.io/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/projects/" title="Projects">
+                <a href="https://mynkpl1998.github.io/projects/" title="Projects">
                     <span>Projects</span>
                 </a>
             </li>
@@ -193,15 +255,15 @@ $</p>
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/rl/">RL</a></li>
-      <li><a href="http://localhost:1313/tags/actor-critic/">Actor-Critic</a></li>
+      <li><a href="https://mynkpl1998.github.io/tags/rl/">RL</a></li>
+      <li><a href="https://mynkpl1998.github.io/tags/actor-critic/">Actor-Critic</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-    <span>&copy; 2024 <a href="http://localhost:1313/">Mayank Kumar Pal</a></span>
+    <span>&copy; 2024 <a href="https://mynkpl1998.github.io/">Mayank Kumar Pal</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

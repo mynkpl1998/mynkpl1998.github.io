@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Actor-Critic on Mayank Kumar Pal</title>
-    <link>http://localhost:1313/tags/actor-critic/</link>
+    <link>https://mynkpl1998.github.io/tags/actor-critic/</link>
     <description>Recent content in Actor-Critic on Mayank Kumar Pal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 27 Jun 2020 01:47:28 -0700</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/actor-critic/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://mynkpl1998.github.io/tags/actor-critic/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Dissecting Policy Optimization</title>
-      <link>http://localhost:1313/blog/disecting_policy_gradients/</link>
+      <link>https://mynkpl1998.github.io/blog/disecting_policy_gradients/</link>
       <pubDate>Sat, 27 Jun 2020 01:47:28 -0700</pubDate>
-      <guid>http://localhost:1313/blog/disecting_policy_gradients/</guid>
+      <guid>https://mynkpl1998.github.io/blog/disecting_policy_gradients/</guid>
       <description>I assume the reader is familiar with the basics of Reinforcement learning and has a basic understanding of statistics and a bit of calculus. One should be comfortable with manipulating value functions, policy, and bellman equations.
 The main idea of writing this blog post is to summarize and extend the understanding of reinforcement learning methods that directly optimizes policy. More or less, this blog post is a summary for me to revisit the concepts and various tricks that are helpful while dealing with Policy-based optimization.</description>
     </item>

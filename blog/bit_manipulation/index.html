@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Bit Manipulation | Mayank Kumar Pal</title>
 <meta name="keywords" content="Bit-manipulation, C, C&#43;&#43;, Embedded">
 <meta name="description" content="Bitwise Operators The following are the bitwise operators which are available in C/C&#43;&#43; programming language.
 Operator Meaning &amp; Bitwise AND | Bitwise OR ^ Bitwise XOR ~ Bitwise complement &laquo; Shift left &raquo; Shift right XOR The main property of XOR is that it keep the bit same if both operands are same, else it flips the bit.
 A B Result 0 0 0 0 1 1 1 0 1 1 1 0 Few Properties of XOR Property Result A ^ 0 A A ^ 1 ~A A ^ A 0 A ^ A ^ A A A ^ B ^ A B A ^ B ^ B A Few properties of Shift operators.">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/blog/bit_manipulation/">
+<link rel="canonical" href="https://mynkpl1998.github.io/blog/bit_manipulation/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.879895b4d5fd89ce0beb4dc2d2820888f6abc1370be8438465503ddda25669ae.css" integrity="sha256-h5iVtNX9ic4L603C0oIIiParwTcL6EOEZVA93aJWaa4=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<link rel="icon" href="https://mynkpl1998.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://mynkpl1998.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://mynkpl1998.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://mynkpl1998.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://mynkpl1998.github.io/safari-pinned-tab.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/blog/bit_manipulation/">
+<link rel="alternate" hreflang="en" href="https://mynkpl1998.github.io/blog/bit_manipulation/">
 <noscript>
     <style>
         #theme-toggle,
@@ -32,7 +32,71 @@ A B Result 0 0 0 0 1 1 1 0 1 1 1 0 Few Properties of XOR Property Result A ^ 0 A
         }
 
     </style>
-</noscript>
+</noscript><meta property="og:title" content="Bit Manipulation" />
+<meta property="og:description" content="Bitwise Operators The following are the bitwise operators which are available in C/C&#43;&#43; programming language.
+Operator Meaning &amp; Bitwise AND | Bitwise OR ^ Bitwise XOR ~ Bitwise complement &laquo; Shift left &raquo; Shift right XOR The main property of XOR is that it keep the bit same if both operands are same, else it flips the bit.
+A B Result 0 0 0 0 1 1 1 0 1 1 1 0 Few Properties of XOR Property Result A ^ 0 A A ^ 1 ~A A ^ A 0 A ^ A ^ A A A ^ B ^ A B A ^ B ^ B A Few properties of Shift operators." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mynkpl1998.github.io/blog/bit_manipulation/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2024-04-08T21:47:41-07:00" />
+<meta property="article:modified_time" content="2024-04-08T21:47:41-07:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Bit Manipulation"/>
+<meta name="twitter:description" content="Bitwise Operators The following are the bitwise operators which are available in C/C&#43;&#43; programming language.
+Operator Meaning &amp; Bitwise AND | Bitwise OR ^ Bitwise XOR ~ Bitwise complement &laquo; Shift left &raquo; Shift right XOR The main property of XOR is that it keep the bit same if both operands are same, else it flips the bit.
+A B Result 0 0 0 0 1 1 1 0 1 1 1 0 Few Properties of XOR Property Result A ^ 0 A A ^ 1 ~A A ^ A 0 A ^ A ^ A A A ^ B ^ A B A ^ B ^ B A Few properties of Shift operators."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "",
+      "item": "https://mynkpl1998.github.io/blog/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Bit Manipulation",
+      "item": "https://mynkpl1998.github.io/blog/bit_manipulation/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Bit Manipulation",
+  "name": "Bit Manipulation",
+  "description": "Bitwise Operators The following are the bitwise operators which are available in C/C++ programming language.\nOperator Meaning \u0026amp; Bitwise AND | Bitwise OR ^ Bitwise XOR ~ Bitwise complement \u0026laquo; Shift left \u0026raquo; Shift right XOR The main property of XOR is that it keep the bit same if both operands are same, else it flips the bit.\nA B Result 0 0 0 0 1 1 1 0 1 1 1 0 Few Properties of XOR Property Result A ^ 0 A A ^ 1 ~A A ^ A 0 A ^ A ^ A A A ^ B ^ A B A ^ B ^ B A Few properties of Shift operators.",
+  "keywords": [
+    "Bit-manipulation", "C", "C++", "Embedded"
+  ],
+  "articleBody": "Bitwise Operators The following are the bitwise operators which are available in C/C++ programming language.\nOperator Meaning \u0026 Bitwise AND | Bitwise OR ^ Bitwise XOR ~ Bitwise complement « Shift left » Shift right XOR The main property of XOR is that it keep the bit same if both operands are same, else it flips the bit.\nA B Result 0 0 0 0 1 1 1 0 1 1 1 0 Few Properties of XOR Property Result A ^ 0 A A ^ 1 ~A A ^ A 0 A ^ A ^ A A A ^ B ^ A B A ^ B ^ B A Few properties of Shift operators. Left shifting the number by 1 - Multiplies the number by 2. Right shifting the number by 1 - Divides the number by 2. Setting a particular bit of register or variable. To set a specific bit of a register or variable, we can use OR operator in combination of shift left operator to move it to a the desired bit location to be set.\nunsigned int a = 10; // 1010 (Binary) a = a | (1\u003c\u003c3); // Sets the 3th bit of the a; Clearing a particular bit of register or variable. To clear a specific bit of a register or variable, we can use AND operator in combination of shift left and compliment operator to move it to the desired bit location to be cleared. The compliment operators inverts the bit to cleared and keep 1s at every other location to keep the original bit for rest while doing AND operation.\nunsigned int a = 10; // 1010 (Binary) a = a \u0026 (~(1\u003c\u003c4)); // Clears the 4th bit of the a; Toggle or flip bit of a register or variable. To toggle or flip a bit, we can use XOR operator. To toggle a specific bit, we can can use XOR in combination with left shift operator to move it to the desired location.\nunsigned int a = 10; // 1010 (Binary) a = a ^ (1\u003c\u003c4) // Toggles the 4th bit. Checking if a given bit is set. To check if the bit is set, we can use AND operator. Create a mask using shift operator where 1 is at the desired location where bit-set needs to be checked.\nunsigned int a = 10; // 1010 (Binary) if( (a \u0026 (1\u003c\u003c3)) == 1 ) // Check if bit is set. printf(\"Bit is set\\n\"); Defining the functions in MACRO The above function can also be written in form of C/C++ MACROS\n#define SET_BIT(number, bit_position) number |= (1\u003c",
+  "wordCount" : "1263",
+  "inLanguage": "en",
+  "datePublished": "2024-04-08T21:47:41-07:00",
+  "dateModified": "2024-04-08T21:47:41-07:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mynkpl1998.github.io/blog/bit_manipulation/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Mayank Kumar Pal",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mynkpl1998.github.io/favicon.ico"
+    }
+  }
+}
+</script>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
@@ -57,35 +121,35 @@ A B Result 0 0 0 0 1 1 1 0 1 1 1 0 Few Properties of XOR Property Result A ^ 0 A
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="Mayank Kumar Pal (Alt + H)">
-                <img src="http://localhost:1313/command.svg" alt="" aria-label="logo"
+            <a href="https://mynkpl1998.github.io/" accesskey="h" title="Mayank Kumar Pal (Alt + H)">
+                <img src="https://mynkpl1998.github.io/command.svg" alt="" aria-label="logo"
                     height="25">Mayank Kumar Pal</a>
             <div class="logo-switches">
             </div>
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/about/" title="About">
+                <a href="https://mynkpl1998.github.io/about/" title="About">
                     <span>About</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/blog/" title="Blog">
+                <a href="https://mynkpl1998.github.io/blog/" title="Blog">
                     <span>Blog</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/publications/" title="Publications">
+                <a href="https://mynkpl1998.github.io/publications/" title="Publications">
                     <span>Publications</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/tags/" title="Tags">
+                <a href="https://mynkpl1998.github.io/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/projects/" title="Projects">
+                <a href="https://mynkpl1998.github.io/projects/" title="Projects">
                     <span>Projects</span>
                 </a>
             </li>
@@ -352,17 +416,17 @@ MSB is reserved for sign. Negative number are represented by 1 and positive by z
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/bit-manipulation/">Bit-Manipulation</a></li>
-      <li><a href="http://localhost:1313/tags/c/">C</a></li>
-      <li><a href="http://localhost:1313/tags/c&#43;&#43;/">C&#43;&#43;</a></li>
-      <li><a href="http://localhost:1313/tags/embedded/">Embedded</a></li>
+      <li><a href="https://mynkpl1998.github.io/tags/bit-manipulation/">Bit-Manipulation</a></li>
+      <li><a href="https://mynkpl1998.github.io/tags/c/">C</a></li>
+      <li><a href="https://mynkpl1998.github.io/tags/c&#43;&#43;/">C&#43;&#43;</a></li>
+      <li><a href="https://mynkpl1998.github.io/tags/embedded/">Embedded</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-    <span>&copy; 2024 <a href="http://localhost:1313/">Mayank Kumar Pal</a></span>
+    <span>&copy; 2024 <a href="https://mynkpl1998.github.io/">Mayank Kumar Pal</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
