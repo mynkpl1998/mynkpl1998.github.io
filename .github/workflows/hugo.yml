@@ -47,6 +47,7 @@ jobs:
         run: |
           pwd
           cd hugo-blog
+          pwd
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
