@@ -1,4 +1,0 @@
-[submodule "hugo-blog"]
-	path = hugo-blog
-	url = https://github.com/mynkpl1998/hugo-blog.git
-	branch = main
