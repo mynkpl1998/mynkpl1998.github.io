@@ -43,11 +43,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: recursive
-      - name: Set Root Directory
-        run: |
-          pwd
-          cd hugo-blog
-          pwd
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
