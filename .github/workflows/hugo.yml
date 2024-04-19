@@ -45,7 +45,8 @@ jobs:
           submodules: recursive
       - name: Set Root Directory
         run: |
-          pwd                    
+          pwd
+          cd hugo-blog
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
